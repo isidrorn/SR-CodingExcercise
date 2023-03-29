@@ -2,12 +2,14 @@ package myProjects.footballCupScoreBoard.classes;
 
 public class AwayTeam extends Team{
 
-	public AwayTeam() {
-		this.locality = Locality.AWAY;
-	}
-	
 	public AwayTeam(String name) {
 		this.locality = Locality.AWAY;
-		this.setName(name);
+		super.setName(name);
+	}
+	
+	//Make sure team name cannot be changed at runtime
+	@Override
+	public void setName(String s) throws NoSuchMethodError{
+		throw new NoSuchMethodError("You cant modify a Team's name after creation");
 	}
 }

@@ -15,10 +15,6 @@ public abstract class Team {
 		this.score = score;
 	}
 	
-	public Team(String name) {
-		this.score = 0;
-		this.name = name;
-	}
 	public Team() {
 		this.score = 0;
 	}

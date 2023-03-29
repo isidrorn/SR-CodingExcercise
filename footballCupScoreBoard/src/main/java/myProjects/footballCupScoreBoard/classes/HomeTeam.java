@@ -6,4 +6,10 @@ public class HomeTeam extends Team{
 		this.locality = Locality.HOME;
 		this.setName(name);
 	}
+	
+	//Make sure team name cannot be changed at runtime
+	@Override
+	public void setName(String s) throws NoSuchMethodError{
+		throw new NoSuchMethodError("You cant modify a Team's name after creation");
+	}
 }

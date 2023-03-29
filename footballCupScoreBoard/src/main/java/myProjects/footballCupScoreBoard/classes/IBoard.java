@@ -7,7 +7,8 @@ public interface IBoard {
 	
 	public void finishGame(Game g);
 	
-	public Game updateScore(int homeScore, int awayScore);
+	//Needed to add the Game to the method parameters else how would it know what game to update? 
+	public void updateScore(int homeScore, int awayScore, Game g);
 	
-	public Summary getSummary();
+	public String getSummary();
 }

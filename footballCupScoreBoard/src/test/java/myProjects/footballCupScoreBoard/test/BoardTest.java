@@ -8,6 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import myProjects.footballCupScoreBoard.classes.AwayTeam;
+import myProjects.footballCupScoreBoard.classes.Board;
+import myProjects.footballCupScoreBoard.classes.Game;
+import myProjects.footballCupScoreBoard.classes.HomeTeam;
+import myProjects.footballCupScoreBoard.classes.Team;
+
 public class BoardTest {
 
 	@BeforeClass
@@ -28,22 +34,40 @@ public class BoardTest {
 
 	@Test
 	public final void testStartGame() {
-		fail("Not yet implemented");
+		Board b = new Board();
+		b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		assertTrue(b.getGames().size() > 0 && b.getGames().get(0).getTotalScore() == 0);
 	}
 
 	@Test
 	public final void testFinishGame() {
-		fail("Not yet implemented");
+		Board b = new Board();
+		Game g;
+		g = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		b.finishGame(g);
+		assertTrue(b.getGames().isEmpty());
 	}
 
 	@Test
 	public final void testUpdateScore() {
-		fail("Not yet implemented");
+		Board b = new Board();
+		Game g;
+		g = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		b.updateScore(1, 0, g);
+		assertTrue(b.getGames().get(0).getTotalScore() > 0);
 	}
 
 	@Test
 	public final void testGetSummary() {
-		fail("Not yet implemented");
+		Board b = new Board();
+		Game g;
+		g = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		b.updateScore(1, 0, g);
+		Game g2;
+		g2 = b.startGame(new HomeTeam("France"), new AwayTeam("Germany"));
+		b.updateScore(1, 2, g2);
+		
+		System.out.println(b.getSummary());
 	}
 
 }
