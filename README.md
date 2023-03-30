@@ -1,6 +1,7 @@
 # SR-CodingExcercise
 ## Assumptions
-Project is 
+Project packaging is JAR since it is to be used as a library 
+
 ## Technologies
 Project is created with:
 * Java version: 1.8
