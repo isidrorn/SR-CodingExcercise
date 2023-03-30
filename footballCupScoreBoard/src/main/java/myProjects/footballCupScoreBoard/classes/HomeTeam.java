@@ -4,7 +4,7 @@ public class HomeTeam extends Team{
 
 	public HomeTeam(String name) {
 		this.locality = Locality.HOME;
-		this.setName(name);
+		super.setName(name);
 	}
 	
 	//Make sure team name cannot be changed at runtime

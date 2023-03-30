@@ -1,6 +1,11 @@
 package myProjects.footballCupScoreBoard.classes;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+import myProjects.footballCupScoreBoard.interfaces.IBoard;
 
 // Assumptions: 
 // Since it isn't stated how many concurrent Boards can exist I will leave it as a normal POJO 
@@ -9,9 +14,6 @@ import java.util.ArrayList;
 public class Board implements IBoard {
 
 	private ArrayList<Game> games = new ArrayList<Game>();
-	
-	//private Summary summary = new Summary();
-
 	
 	public void finishGame(Game g) {
 		getGames().remove(g);
@@ -25,19 +27,14 @@ public class Board implements IBoard {
 	
 	public String getSummary() {
 		StringBuilder str = new StringBuilder();
-		ArrayList<Game> summary = new ArrayList<Game>();
+		ArrayList<Game> summary = getGames();
+		Collections.reverse(summary);
 		
-		summary.stream();
-		// 1. order by highest score in new list 
-		// 2. get positions (the highest the most recent)   with such score
-		// finally order new list as per step 2 
-			// remove  matching elements (must be first  N of the list), add in index order 
-			// ej: if elements 1, 3 and 7 have highest score, after 1st step they will be placed in 0,1,2 "randomly"
-			// insert 7 in 0, 3 in 1, 1 in 2
+		summary = getGames().stream()
+				  .sorted(Comparator.comparing(Game::getTotalScore).reversed())
+				  .collect(Collectors.toCollection(ArrayList::new));
 		
-		
-		
-		getGames().forEach(g -> {
+		summary.forEach(g -> {
 			str.append(g.toString()).append(System.lineSeparator());
 			
 		});

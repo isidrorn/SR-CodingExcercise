@@ -1,9 +1,12 @@
-package myProjects.footballCupScoreBoard.classes;
+package myProjects.footballCupScoreBoard.interfaces;
+
+import myProjects.footballCupScoreBoard.classes.AwayTeam;
+import myProjects.footballCupScoreBoard.classes.Game;
+import myProjects.footballCupScoreBoard.classes.HomeTeam;
 
 public interface IBoard {
 
 	public Game startGame(HomeTeam ht, AwayTeam at) ;
-		//return new Game(ht,at);
 	
 	public void finishGame(Game g);
 	

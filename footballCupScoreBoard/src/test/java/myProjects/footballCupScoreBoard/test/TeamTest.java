@@ -2,7 +2,6 @@ package myProjects.footballCupScoreBoard.test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -14,7 +13,6 @@ public class TeamTest {
 
 	@Test
 	public final void testAwayTeam() {
-		//fail("Not yet implemented");
 		AwayTeam at = new AwayTeam("Morocco");
 		System.out.println("Locality = " + at.getLocality());
 		System.out.println("Score = " + at.getScore());
@@ -25,7 +23,6 @@ public class TeamTest {
 	
 	@Test
 	public final void testHomeTeam() {
-		//fail("Not yet implemented");
 		HomeTeam ht = new HomeTeam("Morocco");
 		System.out.println("Locality = " + ht.getLocality());
 		System.out.println("Score = " + ht.getScore());

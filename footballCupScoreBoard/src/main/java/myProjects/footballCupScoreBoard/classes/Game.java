@@ -6,8 +6,6 @@ public class Game {
 	private HomeTeam homeTeam;
 	private String gameName;
 	
-//	private int totalScore;
-
 	public Game(HomeTeam ht, AwayTeam at) {
 		this.homeTeam = ht;
 		this.awayTeam = at;
@@ -26,9 +24,6 @@ public class Game {
 		return this.homeTeam.getScore() + this.awayTeam.getScore();
 	}
 	
-//	public void setTotalScore() {
-//		this.totalScore = this.homeTeam.getScore() + this.awayTeam.getScore();
-//	}
 	
 	@Override
 	public String toString() {

@@ -23,31 +23,13 @@
   </properties>
 
   <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>org.slf4j</groupId>-->
-<!--      <artifactId>slf4j-api</artifactId>-->
-<!--    </dependency>-->
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.assertj</groupId>-->
-<!--      <artifactId>assertj-core</artifactId>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.assertj</groupId>-->
-<!--      <artifactId>assertj-guava</artifactId>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.slf4j</groupId>-->
-<!--      <artifactId>slf4j-simple</artifactId>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
   </dependencies>
 
   <build>
@@ -56,45 +38,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
       </plugin>
-      <!-- Uncomment to auto-add license header to files. -->
-      <!--
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <configuration>
-          <projectName>footballCupScoreBoard</projectName>
-          <licenseName>TODO e.g. apache_v2 (for options run: mvn -N license:license-list)</licenseName>
-          <extraExtensions>
-            <kt>java</kt>
-          </extraExtensions>
-        </configuration>
-        <executions>
-          <execution>
-            <id>config</id>
-            <goals>
-              <goal>update-file-header</goal>
-            </goals>
-            <phase>process-sources</phase>
-            <configuration>
-              <roots>${basedir}</roots>
-              <includes>.editorconfig,.gitattributes,pom.xml</includes>
-              <extraExtensions>
-                <editorconfig>properties</editorconfig>
-                <gitattributes>properties</gitattributes>
-                <yml>properties</yml>
-              </extraExtensions>
-            </configuration>
-          </execution>
-          <execution>
-            <id>sources</id>
-            <goals>
-              <goal>update-file-header</goal>
-            </goals>
-            <phase>process-sources</phase>
-          </execution>
-        </executions>
-      </plugin>
-      -->
+    
     </plugins>
     <pluginManagement>
     	<plugins>
@@ -133,14 +77,12 @@
     </pluginManagement>
   </build>
 
-  <!-- Don't inherit license from parent POM -->
   <licenses>
     <license>
       <name>GPL</name>
     </license>
   </licenses>
 
-  <!-- Don't inherit developers from parent POM -->
   <developers>
     <developer>
       <name>Isidro Rebollo</name>
