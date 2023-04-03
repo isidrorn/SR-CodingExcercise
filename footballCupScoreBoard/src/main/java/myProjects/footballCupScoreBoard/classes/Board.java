@@ -50,11 +50,11 @@ public class Board implements IBoard {
 	}
 
 	
-	// In my opinion I would have rather pass both Team objects as parameters instead of their scores 
+	// In my opinion I would rather pass both Team objects as parameters instead of their scores 
 	public void updateScore(int homeScore, int awayScore, Game gm) {
 		getGames().forEach(
 				g -> {
-					if (g.getGameName().equals(gm.getGameName())) {
+					if (g.equals(gm)) {
 						g.getHomeTeam().setScore(homeScore);
 						g.getAwayTeam().setScore(awayScore);
 						

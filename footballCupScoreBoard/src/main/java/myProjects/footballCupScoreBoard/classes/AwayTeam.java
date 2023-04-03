@@ -7,9 +7,9 @@ public class AwayTeam extends Team{
 		super.setName(name);
 	}
 	
-	//Make sure team name cannot be changed at runtime
+	//Make sure team name cannot be changed at runtime nor overridden
 	@Override
-	public void setName(String s) throws NoSuchMethodError{
+	public final void setName(String s) throws NoSuchMethodError{
 		throw new NoSuchMethodError("You cant modify a Team's name after creation");
 	}
 }

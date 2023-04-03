@@ -27,6 +27,17 @@ public class BoardTest {
 		b.finishGame(g);
 		assertTrue(b.getGames().isEmpty());
 	}
+	
+	@Test
+	public final void testFinishGame2() {
+		Board b = new Board();
+		Game g;
+		g = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		Game g2;
+		g2 = b.startGame(new HomeTeam("Italy"), new AwayTeam("Japan"));
+		b.finishGame(g);
+		assertTrue(b.getGames().size() == 1 && b.getGames().get(0).getGameName().equals(g2.getGameName()));
+	}
 
 	@Test
 	public final void testUpdateScore() {
@@ -35,6 +46,21 @@ public class BoardTest {
 		g = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
 		b.updateScore(1, 0, g);
 		assertTrue(b.getGames().get(0).getTotalScore() > 0);
+	}
+	
+	@Test
+	public final void testUpdateScoreDataIntegrity() throws InterruptedException {
+		Board b = new Board();
+		Game g;
+		g = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		b.updateScore(1, 0, g);
+		Game g2;
+		g2 = b.startGame(new HomeTeam("Spain"), new AwayTeam("Portugal"));
+		//Thread.sleep(1000);
+		b.updateScore(1, 0, g2);
+		
+		assertTrue(b.getGames().get(0).getTotalScore() == 1);
+		assertTrue(b.getGames().get(1).getTotalScore() == 1);
 	}
 
 	@Test
@@ -69,13 +95,13 @@ public class BoardTest {
 		System.out.println("Summary:");
 		System.out.println(b.getSummary());
 		
-		//TODO assert properly
-//		assertTrue(b.getGames().get(0).equals(g5));
-//		assertTrue(b.getGames().get(1).equals(g3));
-//		assertTrue(b.getGames().get(2).equals(g));
-//		assertTrue(b.getGames().get(3).equals(g6));
-//		assertTrue(b.getGames().get(4).equals(g4));
-//		assertTrue(b.getGames().get(5).equals(g2));
+		
+		assertTrue(b.getGames().get(0).equals(g5));
+		assertTrue(b.getGames().get(1).equals(g3));
+		assertTrue(b.getGames().get(2).equals(g));
+		assertTrue(b.getGames().get(3).equals(g6));
+		assertTrue(b.getGames().get(4).equals(g4));
+		assertTrue(b.getGames().get(5).equals(g2));
 		
 	}
 

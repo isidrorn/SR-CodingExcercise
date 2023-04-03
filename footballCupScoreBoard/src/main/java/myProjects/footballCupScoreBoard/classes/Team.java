@@ -5,6 +5,7 @@ public abstract class Team {
 	private int score; 
 	private String name;
 	public Locality locality;
+	
 	public Locality getLocality() {
 		return locality;
 	}
