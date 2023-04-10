@@ -27,16 +27,5 @@ public class TeamTest {
 		assertFalse(ht.getName().isEmpty());
 	}
 	
-	@Test(expected = NoSuchMethodError.class)
-	public final void testTeamNotModifiable() {
-		AwayTeam fat = new AwayTeam("test");
-		fat.setName("BOOM!");
-		
-	}
-	
-	
-	
-
-	
 
 }

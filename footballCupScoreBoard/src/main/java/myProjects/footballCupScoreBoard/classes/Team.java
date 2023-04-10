@@ -16,14 +16,12 @@ public abstract class Team {
 		this.score = score;
 	}
 	
-	public Team() {
+	public Team(String name) {
 		this.score = 0;
+		this.name = name;
 	}
 	public String getName() {
 		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 	
